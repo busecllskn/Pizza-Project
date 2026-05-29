@@ -9,43 +9,40 @@ const menuler = [
   
   const styles = {
     footer: {
-      background: "#111",
-      color: "#fff",
-      padding: "56px 40px 24px",
+      background: "#292929",
+      color: "white",
+      padding: "40px 40px 25px",
     },
     grid: {
       display: "grid",
-      gridTemplateColumns: "1.4fr 1fr 1fr",
-      gap: "48px",
-      maxWidth: "900px",
-      margin: "0 auto 40px",
+      gridTemplateColumns: "1fr 1fr 1fr",
+      gap: "28px",
+      maxWidth: "700px",
+      margin: "0 auto 10px",
     },
     brand: {
       display: "flex",
       flexDirection: "column",
-      gap: "14px",
+      gap: "25px",
     },
     brandName: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: "24px",
+      fontFamily: "Quattrocento, serif",
+      fontSize: "25px",
       fontWeight: "800",
       lineHeight: "1.2",
-      margin: 0,
-      color: "#fff",
+      color: "white",
     },
     brandInfo: {
       fontSize: "13px",
-      color: "rgba(255,255,255,0.55)",
+      color: "#5F5F5F",
       margin: 0,
-      lineHeight: "1.6",
+      lineHeight: "1",
     },
     colTitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
+      fontFamily: "Quattrocento, serif",
       fontSize: "15px",
-      fontWeight: "700",
-      color: "#fff",
-      marginBottom: "16px",
-      letterSpacing: "0.3px",
+      fontWeight: "800",
+      color: "white",
     },
     menuList: {
       listStyle: "none",
@@ -56,28 +53,27 @@ const menuler = [
       gap: "10px",
     },
     menuItem: {
-      fontSize: "13px",
-      color: "rgba(255,255,255,0.55)",
+      fontSize: "12px",
+      color: "#5F5F5F",
       cursor: "pointer",
-      transition: "color 0.15s",
     },
     igGrid: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
-      gap: "8px",
+      gap: "5px",
     },
     igItem: {
       aspectRatio: "1 / 1",
-      borderRadius: "10px",
-      background: "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)",
+      borderRadius: "5px",
+      background: "#5F5F5F",
     },
     bottom: {
-      borderTop: "1px solid rgba(255,255,255,0.08)",
-      paddingTop: "20px",
+      borderTop: "#5F5F5F",
+      paddingTop: "10px",
       textAlign: "center",
-      fontSize: "12px",
-      color: "rgba(255,255,255,0.3)",
-      maxWidth: "900px",
+      fontSize: "10px",
+      color: "#5F5F5F",
+      maxWidth: "800px",
       margin: "0 auto",
     },
   };
@@ -104,7 +100,6 @@ const menuler = [
             </ul>
           </div>
   
-          {/* Instagram */}
           <div>
             <h4 style={styles.colTitle}>Instagram</h4>
             <div style={styles.igGrid}>
