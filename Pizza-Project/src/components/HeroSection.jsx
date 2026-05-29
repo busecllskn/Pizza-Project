@@ -12,7 +12,11 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
   },
-  
+  content: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   btn: {
     marginTop: "8px",
     padding: "15px 35px",

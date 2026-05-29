@@ -21,6 +21,8 @@ const styles = {
     display: "flex",
     padding: "28px",
     boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+    overflow: "hidden",
+    position: "relative",
   },
   cardRed: {
     background: "#CE2829",
@@ -30,14 +32,25 @@ const styles = {
   },
   cardDark: {
     background: "#292929",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   cardYellow: {
     background: "#FAF7F2",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  rightCol: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
   },
   content: {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+    position: "relative",
+    zIndex: 1,
   },
   h2: {
     fontFamily: "Barlow, serif",
@@ -79,6 +92,7 @@ const styles = {
     letterSpacing: "1.2px",
     cursor: "pointer",
     fontFamily: "Barlow, serif",
+    width: "fit-content",
   },
   btnDark: {
     padding: "9px 20px",
@@ -98,6 +112,16 @@ const styles = {
     color: "#CE2829",
     fontStyle: "italic",
   },
+  imgRed: {
+    width: "100%",
+    objectFit: "contain",
+  },
+  imgRigth: {
+    height: "100%",
+    maxHeigth: "180px",
+    objectFit: "contain",
+    flexShrink: 0,
+  }
 };
 
 export default function FeaturedSection() {
@@ -107,7 +131,7 @@ export default function FeaturedSection() {
         
         {/* Solda olan kırmızı kart */}
         <div style={{ ...styles.cardBase, ...styles.cardRed }}>
-        <img src={food1} alt="Özel Lezzetus" style={{ width: "100%"}} />
+        <img src={food1} alt="Özel Lezzetus" style={styles.imgRed} />
           <div style={styles.content}>
             <h2 style={styles.h2}>Özel<br />Lezzetus</h2>
             <p style={styles.subtext}>Position: Absolute Acı Burger</p>
@@ -120,7 +144,7 @@ export default function FeaturedSection() {
         {/* Sağda olan kartlar */}
         <div style={styles}>
           <div style={{ ...styles.cardBase, ...styles.cardDark }}>
-          <img src={food2} alt="Hackathlon Burger" style={{ width: "100%"}} />
+          <img src={food2} alt="Hackathlon Burger" style={styles.rightCol} />
             <div style={styles.content}>
               <h3 style={styles.h3White}>Hackathlon<br />Burger Menü</h3>
               <Link to="/order">
@@ -130,7 +154,7 @@ export default function FeaturedSection() {
           </div>
 
           <div style={{ ...styles.cardBase, ...styles.cardYellow }}>
-          <img src={food3} alt="Hızlı Kurye" style={{ width: "100%"}} />
+          <img src={food3} alt="Hızlı Kurye" style={styles.imgRight} />
             <div style={styles.content}>
               <h3 style={styles.h3Dark}>
                 <span style={styles.highlight}>Çoooook</span> hızlı<br />npm gibi kurye

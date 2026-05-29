@@ -77,7 +77,7 @@ const styles = {
   }),
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 2fr)",
+    gridTemplateColumns: "repeat(3, 1fr)",
     gap: "25px",
     maxWidth: "900px",
     margin: "0 auto",
@@ -108,6 +108,11 @@ const styles = {
     color: "#292929",
     fontSize: "15px",
   },
+  fiyatRow: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  }
 };
 
 export default function MenuSection() {
@@ -136,7 +141,7 @@ export default function MenuSection() {
             <img src={urun.resim} alt={urun.ad} style={styles.imgPlaceholder} />
             <div style={styles.info}>
               <p style={styles.name}>{urun.ad}</p>
-              <div style={styles}>
+              <div style={styles.fiyatRow}>
                 <span>{urun.puan}</span>
                 <span>{urun.yorum}</span>
                 <span style={styles.fiyat}>{urun.fiyat}</span>
