@@ -8,7 +8,6 @@ import SizeAndDough from "../components/SizeAndDough";
 import ToppingSelector from "../components/ToppingSelector";
 import OrderSummary from "../components/OrderSummary";
 
-// ─── Sabitler ───────────────────────────────────────────────────────────────
 const BAZ_FIYAT = 85.5;
 const MALZEME_FIYAT = 5;
 
@@ -21,7 +20,6 @@ const initialForm = {
   adet: 1,
 };
 
-// ─── Stiller ────────────────────────────────────────────────────────────────
 const styles = {
   page: {
     minHeight: "100vh",

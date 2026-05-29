@@ -8,7 +8,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
-    background: "#f7f2ef",
+    background: "white",
   },
 };
 

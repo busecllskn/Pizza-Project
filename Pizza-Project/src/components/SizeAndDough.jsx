@@ -1,8 +1,7 @@
 const styles = {
     row: {
       display: "flex",
-      gap: "32px",
-      marginBottom: "28px",
+      marginBottom: "50px",
       flexWrap: "wrap",
     },
     group: {
@@ -11,16 +10,16 @@ const styles = {
     },
     label: {
       display: "block",
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: "14px",
-      fontWeight: "700",
-      color: "#1a1a1a",
-      marginBottom: "10px",
-      letterSpacing: "0.3px",
+      fontFamily: "'Roboto Condensed', serif",
+      fontSize: "16px",
+      fontWeight: "500",
+      color: "#292929",
+      marginBottom: "20px",
+      letterSpacing: "0.5px",
     },
     zorunlu: {
-      color: "#c0392b",
-      marginLeft: "2px",
+      color: "#CE2829",
+      marginLeft: "3px",
     },
     radioGroup: {
       display: "flex",
@@ -30,47 +29,41 @@ const styles = {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      width: "52px",
-      height: "52px",
-      borderRadius: "12px",
-      border: active ? "2px solid #c0392b" : "2px solid #e8e0db",
-      background: active ? "#fff0ee" : "#fafafa",
-      color: active ? "#c0392b" : "#555",
-      fontWeight: "700",
+      width: "50px",
+      height: "50px",
+      borderRadius: "30px",
+      border: active ? "2px solid #CE2829" : "2px solid #FAF7F2",
+      background: active ? "#FAF7F2" : "#FAF7F2",
+      color: active ? "#CE2829" : "#292929",
+      fontWeight: "600",
       fontSize: "15px",
       cursor: "pointer",
-      transition: "all 0.18s ease",
-      boxShadow: active ? "0 2px 10px rgba(192,57,43,0.15)" : "none",
     }),
     hiddenInput: {
       position: "absolute",
       opacity: 0,
-      width: 0,
-      height: 0,
     },
     select: {
       width: "100%",
-      padding: "12px 16px",
-      borderRadius: "12px",
-      border: "2px solid #e8e0db",
-      background: "#fafafa",
-      fontSize: "14px",
-      color: "#333",
-      appearance: "none",
+      padding: "15px 30px",
+      borderRadius: "10px",
+      border: "2px solid #FAF7F2",
+      background: "#FAF7F2",
+      fontSize: "15px",
+      color: "#292929",
       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M6 8L0 0h12z'/%3E%3C/svg%3E")`,
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "right 14px center",
+      backgroundPosition: "right",
       cursor: "pointer",
-      outline: "none",
-      fontFamily: "inherit",
-      transition: "border-color 0.18s",
+      fontFamily: "'Roboto Condensed', serif",
     },
   };
   
   export default function SizeAndDough({ formData, handleChange }) {
     return (
       <div style={styles.row}>
-        {/* Boyut */}
+        
+        {/* Pizza boyutu s-m-l */}
         <div style={styles.group}>
           <label style={styles.label}>
             Boyut Seç <span style={styles.zorunlu}>*</span>
@@ -96,7 +89,7 @@ const styles = {
           </div>
         </div>
   
-        {/* Hamur */}
+        {/* Hamur kalınlığı */}
         <div style={styles.group}>
           <label style={styles.label}>
             Hamur Kalınlığı <span style={styles.zorunlu}>*</span>
@@ -107,7 +100,7 @@ const styles = {
             onChange={handleChange}
             style={styles.select}
           >
-            <option value="">-- Seçiniz --</option>
+            <option value="">--- Hamur Kalınlığı Seç ---</option>
             <option value="İnce">İnce</option>
             <option value="Normal">Normal</option>
             <option value="Kalın">Kalın</option>

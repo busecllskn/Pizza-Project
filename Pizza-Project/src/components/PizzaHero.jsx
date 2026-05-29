@@ -3,18 +3,13 @@ const styles = {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      paddingTop: "32px",
-      paddingBottom: "8px",
+      paddingTop: "0",
     },
     imageContainer: {
-      width: "220px",
-      height: "220px",
-      borderRadius: "50%",
-      overflow: "hidden",
-      boxShadow: "0 12px 40px rgba(192,57,43,0.22), 0 4px 12px rgba(0,0,0,0.12)",
-      border: "5px solid #fff",
+      width: "660px",
+      height: "330px",
+      borderRadius: "100%",
       marginBottom: "24px",
-      background: "#f5ede6",
     },
     image: {
       width: "100%",
@@ -22,57 +17,52 @@ const styles = {
       objectFit: "cover",
     },
     title: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: "26px",
-      fontWeight: "700",
-      color: "#1a1a1a",
-      margin: "0 0 10px 0",
-      textAlign: "center",
-      letterSpacing: "0.3px",
+      display: "flex",
+      fontFamily: "'Roboto Condensed', serif",
+      fontSize: "25px",
+      fontWeight: "600",
+      color: "#292929",
+      textAlign: "left",
+      alignItems: "flex-start",
     },
     meta: {
       display: "flex",
       alignItems: "center",
-      gap: "16px",
-      marginBottom: "16px",
+      gap: "120px",
+      marginBottom: "30px",
     },
     fiyat: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: "24px",
-      fontWeight: "700",
-      color: "#c0392b",
+      fontFamily: "'Roboto Condensed', serif",
+      fontSize: "25px",
+      fontWeight: "800",
+      color: "#292929",
     },
-    badge: {
+    breadcrumb: {
       display: "flex",
-      alignItems: "center",
-      gap: "4px",
-      background: "#fff8e1",
-      border: "1px solid #f9c74f",
-      borderRadius: "20px",
-      padding: "3px 10px",
+      alignItems: "flex-start",
+      gap: "10px",
       fontSize: "13px",
-      fontWeight: "600",
-      color: "#b8860b",
+      color: "#5F5F5F",
+    },
+    link: {
+      color: "#5F5F5F",
+      textDecoration: "none",
+    },
+    active: {
+      color: "#CE2829",
+      fontWeight: "500",
     },
     goruntuleme: {
       fontSize: "13px",
-      color: "#999",
+      color: "#292929",
     },
     aciklama: {
-      fontSize: "14px",
+      fontSize: "12px",
       color: "#666",
-      lineHeight: "1.7",
+      lineHeight: "2",
       textAlign: "center",
-      maxWidth: "520px",
-      margin: "0 auto 8px",
-    },
-    divider: {
-      width: "48px",
-      height: "3px",
-      background: "linear-gradient(90deg, #c0392b, #e74c3c)",
-      borderRadius: "2px",
-      border: "none",
-      margin: "16px auto",
+      maxWidth: "600px",
+      margin: "auto",
     },
   };
   
@@ -81,15 +71,22 @@ const styles = {
       <div style={styles.wrap}>
         <div style={styles.imageContainer}>
           <img
-            src="/images/pizza.png"
+            src="/src/assets/form-banner.png"
             alt="Position Absolute Acı Pizza"
             style={styles.image}
           />
+           <nav style={styles.breadcrumb}>
+          <a href="/" style={styles.link}>Anasayfa</a>
+          <span style={styles}>›</span>
+          <span>Seçenekler</span>
+          <span style={styles}>›</span>
+          <strong style={styles.active}>Sipariş Oluştur</strong>
+        </nav>
         </div>
         <h2 style={styles.title}>Position Absolute Acı Pizza</h2>
         <div style={styles.meta}>
           <span style={styles.fiyat}>85.50₺</span>
-          <span style={styles.badge}>★ 4.9</span>
+          <span style={styles}>4.9</span>
           <span style={styles.goruntuleme}>(200)</span>
         </div>
         <p style={styles.aciklama}>
@@ -97,7 +94,7 @@ const styles = {
           Domates, peynir ve çeşitli malzemelerle kaplanmış, odun ateşinde yüksek sıcaklıkta pişirilen
           lezzetli bir İtalyan klasiği.
         </p>
-        <hr style={styles.divider} />
+        <hr style={styles} />
       </div>
     );
   }
