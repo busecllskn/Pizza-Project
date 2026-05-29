@@ -4,31 +4,34 @@ import food2 from "../assets/food-2.png";
 import food3 from "../assets/food-3.png";
 
 const tabs = [
-  "🍜 Ramen", 
-  "🍕 Pizza", 
+  "🍜 Ramen",
+  "🍕 Pizza",
   "🍔 Burger",
-  "🍟 French fries", 
-  "🌮 Fast food", 
+  "🍟 French fries",
+  "🌮 Fast food",
   "🥤 Soft drinks",
 ];
 
 const urunler = [
-  { ad: "Terminal Pizza", 
-    puan: "4.9", 
-    yorum: "(200)", 
+  {
+    ad: "Terminal Pizza",
+    puan: "4.9",
+    yorum: "(200)",
     fiyat: "60₺",
-    resim: food1, 
+    resim: food1,
   },
-  { ad: "Position Absolute Acı Pizza", 
-    puan: "4.9", 
-    yorum: "(928)", 
-    fiyat: "85₺", 
+  {
+    ad: "Position Absolute Acı Pizza",
+    puan: "4.9",
+    yorum: "(928)",
+    fiyat: "85₺",
     resim: food2,
   },
-  { ad: "useEffect Tavuklu Burger", 
-    puan: "4.9", 
-    yorum: "(462)", 
-    fiyat: "75₺", 
+  {
+    ad: "useEffect Tavuklu Burger",
+    puan: "4.9",
+    yorum: "(462)",
+    fiyat: "75₺",
     resim: food3,
   },
 ];
@@ -130,7 +133,7 @@ export default function MenuSection() {
       <div style={styles.grid}>
         {urunler.map((urun) => (
           <div key={urun.ad} style={styles.card}>
-            <div style={styles.imgPlaceholder} />
+            <img src={urun.resim} alt={urun.ad} style={styles.imgPlaceholder} />
             <div style={styles.info}>
               <p style={styles.name}>{urun.ad}</p>
               <div style={styles}>
