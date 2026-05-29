@@ -3,87 +3,83 @@ import { useHistory } from "react-router-dom";
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(160deg, #c0392b 0%, #e74c3c 100%)",
-    fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
+    background: "#CE2829",
+    fontFamily: "'Quattrocento', sans-serif",
     display: "flex",
     flexDirection: "column",
   },
 
-  // ── Header ──────────────────────────────────────────────
+  //Header part
   header: {
     textAlign: "center",
-    padding: "32px 24px 0",
+    padding: "30px 25px",
   },
   headerLogo: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "26px",
-    fontWeight: "700",
-    color: "#fff",
+    fontFamily: "'Barlow', serif",
+    fontSize: "40px",
+    fontWeight: "800",
+    color: "white",
     margin: 0,
-    letterSpacing: "0.5px",
-    textShadow: "0 2px 8px rgba(0,0,0,0.15)",
+    letterSpacing: "1px",
   },
 
-  // ── Main ────────────────────────────────────────────────
+  // Main
   main: {
     flex: 1,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "40px 24px 60px",
+    padding: "40px 25px 60px",
   },
 
-  // ── Hero text ───────────────────────────────────────────
+  //Hero text alanı
   hero: {
     textAlign: "center",
-    marginBottom: "28px",
+    marginBottom: "30px",
   },
   lezzetText: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "20px",
+    fontFamily: "Barlow, serif",
+    fontSize: "25px",
     fontStyle: "italic",
-    color: "#f9c74f",
-    margin: "0 0 8px",
-    letterSpacing: "0.5px",
+    color: "#FDC913",
+    margin: "0 0 10px",
+    letterSpacing: "1px",
   },
   siparisAlindi: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "52px",
-    fontWeight: "900",
-    color: "#fff",
+    fontFamily: "Barlow, serif",
+    fontSize: "50px",
+    fontWeight: "400",
+    color: "white",
     margin: 0,
     letterSpacing: "3px",
     textTransform: "uppercase",
-    textShadow: "0 3px 16px rgba(0,0,0,0.15)",
-    lineHeight: 1.1,
+    lineHeight: 1,
   },
 
-  // ── Divider ─────────────────────────────────────────────
+  // Ayırıcı
   divider: {
     width: "500px",
-    maxWidth: "90vw",
+    maxWidth: "100vw",
     border: "none",
-    borderTop: "1px solid rgba(255,255,255,0.35)",
-    margin: "0 0 28px",
+    borderTop: "2px solid #FAF7F2)",
+    margin: "0 0 30px",
   },
 
-  // ── Detay alanı ─────────────────────────────────────────
+  // Detay part
   detayWrap: {
     width: "100%",
-    maxWidth: "500px",
+    maxWidth: "200px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: "20px",
   },
   pizzaAdi: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "18px",
-    fontWeight: "700",
-    color: "#fff",
-    margin: 0,
+    fontFamily: "Barlow, serif",
+    fontSize: "20px",
+    fontWeight: "200",
+    color: "white",
     textAlign: "center",
-    letterSpacing: "0.3px",
   },
   detaySatirlar: {
     width: "100%",
@@ -93,66 +89,59 @@ const styles = {
   },
   detaySatir: {
     display: "flex",
-    gap: "8px",
-    fontSize: "14px",
-    lineHeight: "1.5",
+    gap: "0",
+    fontSize: "13px",
   },
   detayEtiket: {
-    color: "rgba(255,255,255,0.65)",
-    minWidth: "120px",
+    color: "#FAF7F2",
+    minWidth: "100px",
     flexShrink: 0,
   },
   detayDeger: {
-    color: "#fff",
-    fontWeight: "600",
+    color: "#FAF7F2",
+    fontWeight: "500",
   },
   malzemeDeger: {
-    color: "#f9c74f",
-    fontWeight: "600",
+    color: "#FAF7F2",
+    fontWeight: "500",
   },
 
-  // ── Özet kutusu ─────────────────────────────────────────
+  // Özet alanı
   ozetKutu: {
     width: "100%",
-    background: "rgba(255,255,255,0.12)",
-    border: "1px solid rgba(255,255,255,0.25)",
-    borderRadius: "16px",
-    padding: "20px 24px",
-    backdropFilter: "blur(8px)",
+    background: "#CE2829",
+    border: "1px solid #FAF7F2",
+    borderRadius: "5px",
+    padding: "20px 20px",
   },
   ozetBaslik: {
-    fontFamily: "'Playfair Display', Georgia, serif",
+    fontFamily: "'Barlow', serif",
     fontSize: "15px",
-    fontWeight: "700",
-    color: "#fff",
-    margin: "0 0 14px",
-    paddingBottom: "12px",
-    borderBottom: "1px solid rgba(255,255,255,0.2)",
+    fontWeight: "500",
+    color: "#FAF7F2",
   },
   ozetSatir: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "14px",
-    color: "rgba(255,255,255,0.75)",
-    marginBottom: "8px",
+    fontSize: "15px",
+    color: "#FAF7F2",
   },
   ozetSatirToplam: {
     display: "flex",
     justifyContent: "space-between",
     fontSize: "16px",
     fontWeight: "800",
-    color: "#fff",
-    marginTop: "12px",
-    paddingTop: "12px",
-    borderTop: "1px solid rgba(255,255,255,0.2)",
+    color: "#FAF7F2",
+    marginTop: "10px",
+    paddingTop: "10px",
   },
   toplamFiyat: {
-    color: "#f9c74f",
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "20px",
+    color: "#FAF7F2",
+    fontFamily: "Barlow, serif",
+    fontSize: "15px",
   },
 
-  // ── Axios yanıtı ─────────────────────────────────────────
+  // Axios
   axiosWrap: {
     width: "100%",
     background: "rgba(0,0,0,0.2)",
@@ -177,7 +166,7 @@ const styles = {
     fontFamily: "'Courier New', monospace",
   },
 
-  // ── Buton ────────────────────────────────────────────────
+  //Buton
   btn: {
     marginTop: "8px",
     padding: "14px 40px",
@@ -194,7 +183,6 @@ const styles = {
     fontFamily: "inherit",
   },
 
-  // ── Boş durum ────────────────────────────────────────────
   bosWrap: {
     flex: 1,
     display: "flex",
