@@ -104,6 +104,7 @@ export default function FeaturedSection() {
   return (
     <section style={styles.section}>
       <div style={styles.grid}>
+        
         {/* Solda olan kırmızı kart */}
         <div style={{ ...styles.cardBase, ...styles.cardRed }}>
         <img src={food1} alt="Özel Lezzetus" style={{ width: "100%"}} />
