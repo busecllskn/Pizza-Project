@@ -1,8 +1,12 @@
 import { useState } from "react";
 
 const tabs = [
-  "🍜 Ramen", "🍕 Pizza", "🍔 Burger",
-  "🍟 French fries", "🌮 Fast food", "🥤 Soft drinks",
+  "🍜 Ramen", 
+  "🍕 Pizza", 
+  "🍔 Burger",
+  "🍟 French fries", 
+  "🌮 Fast food", 
+  "🥤 Soft drinks",
 ];
 
 const urunler = [
@@ -13,87 +17,74 @@ const urunler = [
 
 const styles = {
   section: {
-    padding: "56px 40px",
-    background: "#fff",
+    padding: "50px 10px",
+    background: "#FAF7F2",
     textAlign: "center",
   },
   subtitle: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "14px",
+    fontFamily: "Satisfy, serif",
+    fontSize: "20px",
     fontStyle: "italic",
-    color: "#c0392b",
-    marginBottom: "8px",
-    letterSpacing: "0.5px",
+    color: "#CE2829",
+    marginBottom: "20px",
+    letterSpacing: "1px",
   },
   title: {
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: "28px",
-    fontWeight: "800",
-    color: "#1a1a1a",
-    marginBottom: "32px",
-    letterSpacing: "0.3px",
+    fontFamily: "Barlow, serif",
+    fontSize: "35px",
+    fontWeight: "600",
+    color: "#292929",
+    marginBottom: "35px",
+    letterSpacing: "0.5px",
   },
   tabsWrap: {
     display: "flex",
     justifyContent: "center",
-    gap: "8px",
-    flexWrap: "wrap",
-    marginBottom: "40px",
+    gap: "10px",
+    marginBottom: "50px",
   },
   tab: (active) => ({
-    padding: "10px 20px",
-    borderRadius: "30px",
-    border: active ? "none" : "1px solid #e8e0db",
-    background: active ? "#1a1a1a" : "#fafafa",
-    color: active ? "#fff" : "#555",
-    fontSize: "13px",
-    fontWeight: active ? "700" : "500",
+    padding: "15px 30px",
+    borderRadius: "20px",
+    border: active ? "none" : " white",
+    background: active ? "#292929" : "white",
+    color: active ? "white" : "#292929",
+    fontSize: "15px",
+    fontWeight: active ? "700" : "600",
     cursor: "pointer",
-    transition: "all 0.18s",
-    fontFamily: "inherit",
+    fontFamily: "Roboto, serif",
   }),
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "24px",
+    gridTemplateColumns: "repeat(3, 2fr)",
+    gap: "25px",
     maxWidth: "900px",
     margin: "0 auto",
   },
   card: {
-    background: "#fff",
-    borderRadius: "18px",
-    border: "1px solid #f0ebe7",
-    overflow: "hidden",
+    background: "white",
+    borderRadius: "30px",
     textAlign: "left",
-    boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
-    transition: "transform 0.18s, box-shadow 0.18s",
   },
   imgPlaceholder: {
     width: "100%",
     aspectRatio: "1 / 1",
-    background: "linear-gradient(135deg, #f5ede6 0%, #edddd4 100%)",
+    background: "white",
   },
   info: {
-    padding: "14px 16px",
+    padding: "25px 15px",
   },
   name: {
-    fontSize: "14px",
-    fontWeight: "600",
-    color: "#1a1a1a",
-    marginBottom: "8px",
-    lineHeight: "1.4",
-  },
-  meta: {
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    fontSize: "13px",
-    color: "#999",
+    fontSize: "18px",
+    fontWeight: "500",
+    color: "#292929",
+    marginBottom: "20px",
+    lineHeight: "1.2",
   },
   fiyat: {
     marginLeft: "auto",
-    fontWeight: "800",
-    color: "#1a1a1a",
+    fontWeight: "700",
+    color: "#292929",
     fontSize: "15px",
   },
 };
@@ -124,8 +115,8 @@ export default function MenuSection() {
             <div style={styles.imgPlaceholder} />
             <div style={styles.info}>
               <p style={styles.name}>{urun.ad}</p>
-              <div style={styles.meta}>
-                <span>⭐ {urun.puan}</span>
+              <div style={styles}>
+                <span>{urun.puan}</span>
                 <span>{urun.yorum}</span>
                 <span style={styles.fiyat}>{urun.fiyat}</span>
               </div>
