@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import food1 from "../assets/kart-1.png";
+import food2 from "../assets/kart-2.png";
+import food3 from "../assets/kart-3.png";
 
 const styles = {
   section: {
@@ -103,6 +106,7 @@ export default function FeaturedSection() {
       <div style={styles.grid}>
         {/* Solda olan kırmızı kart */}
         <div style={{ ...styles.cardBase, ...styles.cardRed }}>
+        <img src={food1} alt="Özel Lezzetus" style={{ width: "100%"}} />
           <div style={styles.content}>
             <h2 style={styles.h2}>Özel<br />Lezzetus</h2>
             <p style={styles.subtext}>Position: Absolute Acı Burger</p>
@@ -115,6 +119,7 @@ export default function FeaturedSection() {
         {/* Sağda olan kartlar */}
         <div style={styles}>
           <div style={{ ...styles.cardBase, ...styles.cardDark }}>
+          <img src={food2} alt="Hackathlon Burger" style={{ width: "100%"}} />
             <div style={styles.content}>
               <h3 style={styles.h3White}>Hackathlon<br />Burger Menü</h3>
               <Link to="/order">
@@ -124,6 +129,7 @@ export default function FeaturedSection() {
           </div>
 
           <div style={{ ...styles.cardBase, ...styles.cardYellow }}>
+          <img src={food3} alt="Hızlı Kurye" style={{ width: "100%"}} />
             <div style={styles.content}>
               <h3 style={styles.h3Dark}>
                 <span style={styles.highlight}>Çoooook</span> hızlı<br />npm gibi kurye
