@@ -94,7 +94,6 @@ const styles = {
   },
 };
 
-// ─── Component ───────────────────────────────────────────────────────────────
 export default function OrderPage({ setSiparis, setAxiosYaniti }) {
   const history = useHistory();
   const [formData, setFormData] = useState(initialForm);
@@ -111,7 +110,7 @@ export default function OrderPage({ setSiparis, setAxiosYaniti }) {
     setIsValid(isimValid && malzemeValid && boyutValid);
   }, [formData]);
 
-  // Genel değişiklik handler'ı
+  // Genel değişiklik
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
     if (type === "checkbox") {

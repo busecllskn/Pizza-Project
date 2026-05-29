@@ -7,7 +7,7 @@ import HomeFooter from "../components/HomeFooter";
 const styles = {
   page: {
     minHeight: "100vh",
-    fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
+    fontFamily: "'Barlow', sans-serif",
     background: "white",
   },
 };

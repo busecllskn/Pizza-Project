@@ -1,4 +1,7 @@
 import { useState } from "react";
+import food1 from "../assets/food-1.png";
+import food2 from "../assets/food-2.png";
+import food3 from "../assets/food-3.png";
 
 const tabs = [
   "🍜 Ramen", 
@@ -10,9 +13,24 @@ const tabs = [
 ];
 
 const urunler = [
-  { ad: "Terminal Pizza", puan: "4.9", yorum: "(200)", fiyat: "60₺" },
-  { ad: "Position Absolute Acı Pizza", puan: "4.9", yorum: "(928)", fiyat: "85₺" },
-  { ad: "useEffect Tavuklu Burger", puan: "4.9", yorum: "(462)", fiyat: "75₺" },
+  { ad: "Terminal Pizza", 
+    puan: "4.9", 
+    yorum: "(200)", 
+    fiyat: "60₺",
+    resim: food1, 
+  },
+  { ad: "Position Absolute Acı Pizza", 
+    puan: "4.9", 
+    yorum: "(928)", 
+    fiyat: "85₺", 
+    resim: food2,
+  },
+  { ad: "useEffect Tavuklu Burger", 
+    puan: "4.9", 
+    yorum: "(462)", 
+    fiyat: "75₺", 
+    resim: food3,
+  },
 ];
 
 const styles = {
