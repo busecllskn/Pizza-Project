@@ -55,3 +55,5 @@ describe("Teknolojik Yemekler Testleri", () => {
     cy.contains("+").click();
     cy.contains("211.00₺").should("be.visible");
 });
+
+});
