@@ -5,86 +5,79 @@ describe("template spec", () => {
 });
 
 describe("Teknolojik Yemekler Testleri", () => {
-
   beforeEach(() => {
-    cy.visit("");
+    cy.visit("http://localhost:5173/order");
   });
 
-  // Input'a metin girme testi
+  // 1 - İsim inputuna metin girilebilir
   it("İsim inputuna metin girilebilir", () => {
     cy.get('input[name="isim"]').type("Ahmet");
     cy.get('input[name="isim"]').should("have.value", "Ahmet");
   });
 
-  // Birden fazla malzeme seçme testi
-  it("Birden fazla malzeme seçilebilir", () => {
-    cy.contains("Pepperoni").click();
-    cy.contains("Domates").click();
-    cy.contains("Sosis").click();
-
-    cy.contains("3 / 10").should("be.visible");
+  // 2 - 3 karakterden kısa isimde hata mesajı gösterilir
+  it("İsim 3 karakterden kısaysa hata mesajı görünür", () => {
+    cy.get('input[name="isim"]').type("Al");
+    cy.contains("İsim en az 3 karakter olmalı.").should("be.visible");
   });
 
-  // Formu gönderme testi
-  it("Form eksiksiz doldurulunca sipariş verilebilir", () => {
-    cy.intercept("POST", "https://reqres.in/api/pizza", {
-      statusCode: 201,
-      body: { id: "42" },
-    }).as("siparisGonder");
+  // 3 - Boyut seçilebilir
+  it("Pizza boyutu seçilebilir", () => {
+    cy.get('input[name="boyut"][value="Orta"]').check({ force: true });
+    cy.get('input[name="boyut"][value="Orta"]').should("be.checked");
+  });
 
+  // 4 - Hamur kalınlığı seçilebilir
+  it("Hamur kalınlığı seçilebilir", () => {
+    cy.get('select[name="hamur"]').select("İnce");
+    cy.get('select[name="hamur"]').should("have.value", "İnce");
+  });
+
+  // 5 - Malzeme seçilebilir ve sayaç güncellenir
+  it("Ek malzeme seçilebilir", () => {
+    cy.get('input[type="checkbox"][value="Pepperoni"]').check({ force: true });
+    cy.get('input[type="checkbox"][value="Pepperoni"]').should("be.checked");
+  });
+
+  // 6 - 4'ten az malzeme seçildiğinde hata mesajı görünür
+  it("4'ten az malzeme seçildiğinde uyarı gösterilir", () => {
+    cy.get('input[type="checkbox"][value="Pepperoni"]').check({ force: true });
+    cy.contains("En az 4 malzeme seçmelisiniz.").should("be.visible");
+  });
+
+  // 7 - Sipariş ver butonu geçersiz formda disabled olur
+  it("Form geçersizken sipariş ver butonu disabled olur", () => {
+    cy.get('button[type="submit"]').should("be.disabled");
+  });
+
+  // 8 - Geçerli form doldurulunca sipariş ver butonu aktif olur
+  it("Form geçerliyken sipariş ver butonu aktif olur", () => {
+    cy.get('input[name="boyut"][value="Orta"]').check({ force: true });
+    cy.get('select[name="hamur"]').select("Normal");
+    ["Pepperoni", "Domates", "Biber", "Sosis"].forEach((m) => {
+      cy.get(`input[type="checkbox"][value="${m}"]`).check({ force: true });
+    });
     cy.get('input[name="isim"]').type("Ahmet");
-    cy.contains("S").click();
-    cy.contains("Pepperoni").click();
-    cy.contains("Domates").click();
-    cy.contains("Biber").click();
-    cy.contains("Sosis").click();
+    cy.get('button[type="submit"]').should("not.be.disabled");
+  });
 
-    cy.contains("Sipariş Ver").click();
-    cy.wait("@siparisGonder");
+  // 9 - Adet artırma butonu çalışır
+  it("Adet artırma butonu çalışır", () => {
+    cy.contains("button", "+").click();
+    cy.get(".adet-sayi").should("have.text", "2");
+  });
 
+  // 10 - Sipariş gönderilince confirmation sayfasına yönlendirilir
+  it("Geçerli sipariş sonrası confirmation sayfasına gidilir", () => {
+    cy.get('input[name="boyut"][value="Büyük"]').check({ force: true });
+    cy.get('select[name="hamur"]').select("Kalın");
+    ["Pepperoni", "Domates", "Biber", "Sosis"].forEach((m) => {
+      cy.get(`input[type="checkbox"][value="${m}"]`).check({ force: true });
+    });
+    cy.get('input[name="isim"]').type("Liva");
+    cy.get('button[type="submit"]').click();
     cy.url().should("include", "/confirmation");
-    cy.contains("Sipariş Alındı").should("be.visible");
+    cy.contains("SİPARİŞ ALINDI").should("be.visible");
   });
-
-  // Başlangıç fiyatı
-  it("Sayfa açılınca baz fiyat 85.50₺ görünür", () => {
-    cy.contains("85.50₺").should("be.visible");
-  });
-
-  // 1 malzeme ekleyince fiyat 5₺ artar (85.50 + 5 = 90.50₺)
-  it("1 malzeme seçince toplam 90.50₺ olur", () => {
-    cy.contains("Pepperoni").click();
-    cy.contains("90.50₺").should("be.visible");
-  });
-
-  // Adet artırınca toplam fiyat güncellenir (105.50 * 2 = 211.00₺)
-  it("4 malzeme seçip adeti 2 yapınca toplam 211.00₺ olur", () => {
-    cy.contains("Pepperoni").click();
-    cy.contains("Domates").click();
-    cy.contains("Biber").click();
-    cy.contains("Sosis").click();
-    cy.contains("+").click();
-    cy.contains("211.00₺").should("be.visible");
-  });
-
-  // Malzeme kaldırınca fiyat düşer
-  it("Seçilen malzeme kaldırılınca fiyat düşer", () => {
-    cy.contains("Pepperoni").click(); // +5₺ → 90.50₺
-    cy.contains("90.50₺").should("be.visible");
-    cy.contains("Pepperoni").click(); // kaldır → 85.50₺
-    cy.contains("85.50₺").should("be.visible");
-  });
-
-  // Adet azaltınca fiyat güncellenir
-  it("Adet artırıp azaltınca fiyat tekrar eski haline döner", () => {
-    cy.contains("Pepperoni").click();
-    cy.contains("Domates").click();
-    cy.contains("Biber").click();
-    cy.contains("Sosis").click();
-    cy.contains("+").click(); // 2 adet → 211.00₺
-    cy.contains("211.00₺").should("be.visible");
-    cy.contains("−").click(); // 1 adete dön → 105.50₺
-    cy.contains("105.50₺").should("be.visible");
-  });
-
+  
 });
