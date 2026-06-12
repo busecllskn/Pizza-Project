@@ -115,12 +115,14 @@ const styles = {
   },
   imgRed: {
     width: "100%",
-    objectFit: "contain",
+    objectFit: "cover",
+    background: "100%",
   },
   imgRight: {
     height: "100%",
     maxHeight: "180px",
-    objectFit: "contain",
+    objectFit: "cover",
+    background: "100%",
     flexShrink: 0,
   },
   cardRedBody: {
