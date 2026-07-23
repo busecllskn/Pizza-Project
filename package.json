@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "pizza-project",
   "version": "1.0.0",
   "description": "",
@@ -18,10 +17,8 @@
   "bugs": {
     "url": "https://github.com/busecllskn/Pizza-Project/issues"
   },
-  "homepage": "https://github.com/busecllskn/Pizza-Project#readme"
-=======
+  "homepage": "https://github.com/busecllskn/Pizza-Project#readme",
   "devDependencies": {
     "cypress": "^15.16.0"
   }
->>>>>>> d2d3ecdec037efc55400328f546d980baeed5b7f
 }
