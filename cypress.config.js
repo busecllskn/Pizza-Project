@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Cypress.config · JS
 import { defineConfig } from "cypress";
  
@@ -8,3 +9,16 @@ export default defineConfig({
   },
 });
  
+=======
+import { defineConfig } from "cypress";
+
+export default defineConfig({
+  allowCypressEnv: false,
+
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
+>>>>>>> 47779c4aa9e14fda56b07093353b4cbf1658d319

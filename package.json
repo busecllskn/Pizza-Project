@@ -8,9 +8,18 @@
     "build": "vite build",
     "preview": "vite preview" 
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/busecllskn/Pizza-Project.git"
+=======
+  "dependencies": {
+    "axios": "^1.17.0",
+    "cypress": "^15.16.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^5.3.4"
+>>>>>>> 47779c4aa9e14fda56b07093353b4cbf1658d319
   },
   "keywords": [],
   "author": "",
