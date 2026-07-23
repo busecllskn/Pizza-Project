@@ -12,11 +12,11 @@ const styles = {
   //Header part
   header: {
     textAlign: "center",
-    padding: "30px 25px",
+    padding: "35px 25px",
   },
   headerLogo: {
     fontFamily: "'Barlow', serif",
-    fontSize: "40px",
+    fontSize: "44px",
     fontWeight: "800",
     color: "white",
     margin: 0,
@@ -29,7 +29,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "40px 25px 60px",
+    padding: "20px 25px 60px",
   },
 
   //Hero text alanı
@@ -39,7 +39,7 @@ const styles = {
   },
   lezzetText: {
     fontFamily: "Barlow, serif",
-    fontSize: "25px",
+    fontSize: "28px",
     fontStyle: "italic",
     color: "#FDC913",
     margin: "0 0 10px",
@@ -47,7 +47,7 @@ const styles = {
   },
   siparisAlindi: {
     fontFamily: "Barlow, serif",
-    fontSize: "50px",
+    fontSize: "56px",
     fontWeight: "400",
     color: "white",
     margin: 0,
@@ -58,25 +58,25 @@ const styles = {
 
   // Ayırıcı
   divider: {
-    width: "500px",
+    width: "600px",
     maxWidth: "100vw",
     border: "none",
-    borderTop: "2px solid #FAF7F2)",
-    margin: "0 0 30px",
+    borderTop: "2px solid #FAF7F2",
+    margin: "0 0 35px",
   },
 
-  // Detay part
+  // Detay part (Yanlara biraz daha yayıldı ve büyüdü)
   detayWrap: {
     width: "100%",
-    maxWidth: "200px",
+    maxWidth: "540px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "20px",
+    gap: "24px",
   },
   pizzaAdi: {
     fontFamily: "Barlow, serif",
-    fontSize: "20px",
+    fontSize: "24px",
     fontWeight: "200",
     color: "white",
     textAlign: "center",
@@ -85,25 +85,28 @@ const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "12px",
   },
   detaySatir: {
     display: "flex",
-    gap: "0",
-    fontSize: "13px",
+    justifyContent: "space-between",
+    gap: "15px",
+    fontSize: "15px",
   },
   detayEtiket: {
     color: "#FAF7F2",
-    minWidth: "100px",
+    minWidth: "140px",
     flexShrink: 0,
   },
   detayDeger: {
     color: "#FAF7F2",
     fontWeight: "500",
+    textAlign: "right",
   },
   malzemeDeger: {
     color: "#FAF7F2",
     fontWeight: "500",
+    textAlign: "right",
   },
 
   // Özet alanı
@@ -111,67 +114,71 @@ const styles = {
     width: "100%",
     background: "#CE2829",
     border: "1px solid #FAF7F2",
-    borderRadius: "5px",
-    padding: "20px 20px",
+    borderRadius: "6px",
+    padding: "24px 24px",
   },
   ozetBaslik: {
     fontFamily: "'Barlow', serif",
-    fontSize: "15px",
+    fontSize: "17px",
     fontWeight: "500",
     color: "#FAF7F2",
+    marginBottom: "12px",
   },
   ozetSatir: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "15px",
+    fontSize: "16px",
     color: "#FAF7F2",
+    marginBottom: "6px",
   },
   ozetSatirToplam: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "16px",
+    fontSize: "18px",
     fontWeight: "800",
     color: "#FAF7F2",
-    marginTop: "10px",
-    paddingTop: "10px",
+    marginTop: "12px",
+    paddingTop: "12px",
+    borderTop: "1px solid #FAF7F2",
   },
   toplamFiyat: {
     color: "#FAF7F2",
     fontFamily: "Barlow, serif",
-    fontSize: "15px",
+    fontSize: "17px",
   },
 
   // Axios
   axiosWrap: {
     width: "100%",
-    background: " #5F5F5F",
+    background: "#5F5F5F",
     borderRadius: "10px",
-    padding: "15px 20px",
-    border: " #5F5F5F)",
+    padding: "18px 22px",
   },
   axiosBaslik: {
-    fontSize: "15px",
+    fontSize: "16px",
     fontWeight: "600",
-    color: " #5F5F5F",
+    color: "#FAF7F2",
     textTransform: "uppercase",
     letterSpacing: "1px",
-    margin: "0 0 8px",
+    margin: "0 0 10px",
   },
   axiosIcerik: {
-    fontSize: "15px",
-    color: " #5F5F5F",
+    fontSize: "14px",
+    color: "#FAF7F2",
     margin: 0,
+    whiteSpace: "pre-wrap",
+    wordBreak: "break-all",
   },
 
   //Buton
   btn: {
     marginTop: "10px",
-    padding: "15px 40px",
+    padding: "18px 48px",
     borderRadius: "40px",
     border: "2px solid #FAF7F2",
     background: "transparent",
     color: "#FAF7F2",
-    fontSize: "13px",
+    fontSize: "14px",
     fontWeight: "600",
     letterSpacing: "2px",
     textTransform: "uppercase",
@@ -184,9 +191,9 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    gap: "10px",
+    gap: "15px",
     color: "#FAF7F2",
-    fontSize: "20px",
+    fontSize: "22px",
   },
 };
 
@@ -269,11 +276,13 @@ export default function ConfirmationPage({ siparis, axiosYaniti }) {
             <p style={styles.ozetBaslik}>Sipariş Toplamı</p>
             <div style={styles.ozetSatir}>
               <span>Seçimler</span>
-              <span>{secimFiyat.toFixed(2)}₺</span>
+              <span>{secimFiyat ? secimFiyat.toFixed(2) : "0.00"}₺</span>
             </div>
             <div style={styles.ozetSatirToplam}>
               <span>Toplam</span>
-              <span style={styles.toplamFiyat}>{toplamFiyat.toFixed(2)}₺</span>
+              <span style={styles.toplamFiyat}>
+                {toplamFiyat ? toplamFiyat.toFixed(2) : "0.00"}₺
+              </span>
             </div>
           </div>
 

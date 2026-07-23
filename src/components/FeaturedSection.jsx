@@ -17,7 +17,6 @@ const styles = {
   },
   cardBase: {
     borderRadius: "15px",
-    minHeight: "220px",
     display: "flex",
     padding: "28px",
     boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
@@ -31,13 +30,16 @@ const styles = {
     justifyContent: "flex-end",
     padding: "0",
   },
+  // Sağdaki kartlar resimler tam sığsın diye bir tık büyütüldü
   cardDark: {
     background: "#292929",
+    minHeight: "220px",
     alignItems: "center",
     justifyContent: "space-between",
   },
   cardYellow: {
     background: "#FAF7F2",
+    minHeight: "220px",
     alignItems: "center",
     justifyContent: "space-between",
   },
@@ -51,7 +53,8 @@ const styles = {
     flexDirection: "column",
     gap: "10px",
     position: "relative",
-    zIndex: 1,
+    zIndex: 2,
+    maxWidth: "55%",
   },
   h2: {
     fontFamily: "Barlow, serif",
@@ -115,21 +118,24 @@ const styles = {
   },
   imgRed: {
     width: "100%",
+    height: "100%",
     objectFit: "cover",
-    background: "100%",
+    objectPosition: "bottom right",
   },
   imgRight: {
     height: "100%",
     maxHeight: "180px",
-    objectFit: "cover",
-    background: "100%",
+    objectFit: "contain",
     flexShrink: 0,
+    zIndex: 1,
   },
   cardRedBody: {
     padding: "24px 28px 28px",
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+    zIndex: 2,
+    position: "relative",
   },
 };
 
@@ -140,7 +146,9 @@ export default function FeaturedSection() {
 
         {/* Büyük kırmızı kart */}
         <div style={{ ...styles.cardBase, ...styles.cardRed }}>
-          <img src={food1} alt="Özel Lezzetus" style={styles.imgRed} />
+          <div style={{ position: "absolute", right: 0, bottom: 0, width: "60%", height: "70%", zIndex: 1 }}>
+            <img src={food1} alt="Özel Lezzetus" style={styles.imgRed} />
+          </div>
           <div style={styles.cardRedBody}>
             <h2 style={styles.h2}>Özel<br />Lezzetus</h2>
             <p style={styles.subtext}>Position: Absolute Acı Burger</p>

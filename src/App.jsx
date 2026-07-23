@@ -9,21 +9,23 @@ function App() {
   const [axiosYaniti, setAxiosYaniti] = useState(null);
 
   return (
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route
-        path="/order"
-        render={() => (
-          <OrderPage setSiparis={setSiparis} setAxiosYaniti={setAxiosYaniti} />
-        )}
-      />
-      <Route
-        path="/confirmation"
-        render={() => (
-          <ConfirmationPage siparis={siparis} axiosYaniti={axiosYaniti} />
-        )}
-      />
-    </Switch>
+    <div style={{ width: "100%", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route
+          path="/order"
+          render={() => (
+            <OrderPage setSiparis={setSiparis} setAxiosYaniti={setAxiosYaniti} />
+          )}
+        />
+        <Route
+          path="/confirmation"
+          render={() => (
+            <ConfirmationPage siparis={siparis} axiosYaniti={axiosYaniti} />
+          )}
+        />
+      </Switch>
+    </div>
   );
 }
 

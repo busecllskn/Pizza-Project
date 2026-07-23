@@ -12,7 +12,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingTop: "50px",
+    paddingTop: "80px", // İçerik biraz daha aşağıda konumlandırıldı
   },
   content: {
     display: "flex",
@@ -23,9 +23,9 @@ const styles = {
   },
   brandTitle: {
     color: "#FFFFFF",
-    fontSize: "36px", // Dikkat çekici ve büyük
+    fontSize: "48px",
     fontWeight: "400",
-    fontFamily: "'Caveat', cursive", // Orijinal görseldeki o havalı, özel el yazısı stili
+    fontFamily: "'Caveat', cursive",
     fontStyle: "normal",
     marginBottom: "15px",
     letterSpacing: "1.5px",
@@ -33,24 +33,24 @@ const styles = {
   },
   mainHeadline: {
     color: "#FFFFFF",
-    fontSize: "46px",
+    fontSize: "66px", // Yazı boyutu bir tık daha büyütüldü
     fontWeight: "700",
     lineHeight: "1.15",
     fontFamily: "'Barlow', sans-serif",
-    maxWidth: "700px",
-    marginBottom: "30px",
+    maxWidth: "950px",
+    marginBottom: "35px",
     letterSpacing: "1.5px",
     textTransform: "uppercase",
     textShadow: "0px 2px 8px rgba(0,0,0,0.3)",
   },
   btn: {
-    padding: "14px 32px",
+    padding: "16px 38px",
     borderRadius: "30px",
     border: "none",
     background: "#FDC913",
     color: "#292929",
     fontWeight: "700",
-    fontSize: "14px",
+    fontSize: "16px",
     letterSpacing: "1px",
     cursor: "pointer",
     fontFamily: "Barlow, sans-serif",
@@ -62,7 +62,6 @@ const styles = {
 export default function HeroSection() {
   return (
     <div style={{ ...styles.hero, backgroundImage: `url(${homeImg})` }}>
-      {/* Google Fonts üzerinden şık el yazısı fontu (Caveat) eklendi */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Caveat:wght@600&display=swap');

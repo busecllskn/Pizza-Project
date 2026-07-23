@@ -16,40 +16,43 @@ const menuler = [
 
 const styles = {
   footer: {
-    background: "#292929",
+    background: "#1a1a1a", // Footer arka planı biraz daha derinleştirildi
     color: "white",
-    padding: "40px 40px 25px",
+    padding: "60px 20px 30px",
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gap: "28px",
-    maxWidth: "700px",
-    margin: "0 auto 10px",
+    gridTemplateColumns: "1.2fr 1fr 1fr", // Sütun oranları içeriğe göre dengelendi
+    gap: "40px",
+    maxWidth: "1100px",
+    margin: "0 auto 40px",
   },
   brand: {
     display: "flex",
     flexDirection: "column",
-    gap: "25px",
+    gap: "20px",
   },
   brandName: {
-    fontFamily: "Quattrocento, serif",
-    fontSize: "25px",
+    fontFamily: "'Barlow', sans-serif",
+    fontSize: "28px",
     fontWeight: "800",
     lineHeight: "1.2",
     color: "white",
+    textTransform: "uppercase",
   },
   brandInfo: {
-    fontSize: "13px",
-    color: "#5F5F5F",
+    fontSize: "14px",
+    color: "#b0b0b0", // Okunabilirlik için renk tonu açıldı
     margin: 0,
-    lineHeight: "1",
+    lineHeight: "1.5",
   },
   colTitle: {
-    fontFamily: "Quattrocento, serif",
-    fontSize: "15px",
-    fontWeight: "800",
+    fontFamily: "'Barlow', sans-serif",
+    fontSize: "18px",
+    fontWeight: "700",
     color: "white",
+    marginBottom: "20px",
+    letterSpacing: "0.5px",
   },
   menuList: {
     listStyle: "none",
@@ -57,31 +60,33 @@ const styles = {
     margin: 0,
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "12px",
   },
   menuItem: {
-    fontSize: "12px",
-    color: "#5F5F5F",
+    fontSize: "14px",
+    color: "#b0b0b0",
     cursor: "pointer",
+    transition: "color 0.2s",
   },
   igGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gap: "5px",
+    gap: "8px",
+    maxWidth: "200px",
   },
   igItem: {
     aspectRatio: "1 / 1",
-    borderRadius: "5px",
+    borderRadius: "6px",
     width: "100%",
     objectFit: "cover",
   },
   bottom: {
-    borderTop: "#5F5F5F",
-    paddingTop: "10px",
+    borderTop: "1px solid #333333", // Eksik olan çizgi tipi ve rengi düzeltildi
+    paddingTop: "20px",
     textAlign: "center",
-    fontSize: "10px",
-    color: "#5F5F5F",
-    maxWidth: "800px",
+    fontSize: "12px",
+    color: "#888888",
+    maxWidth: "1100px",
     margin: "0 auto",
   },
 };
@@ -90,7 +95,7 @@ export default function HomeFooter() {
   return (
     <footer style={styles.footer}>
       <div style={styles.grid}>
-        {/* Marka */}
+        {/* Marka Bilgileri */}
         <div style={styles.brand}>
           <h3 style={styles.brandName}>Teknolojik<br />Yemekler</h3>
           <p style={styles.brandInfo}>📍 341 Londonderry Road,<br />İstanbul Türkiye</p>
@@ -100,7 +105,7 @@ export default function HomeFooter() {
 
         {/* Menüler */}
         <div>
-          <h4 style={styles.colTitle}>Sıcacık Menuler</h4>
+          <h4 style={styles.colTitle}>Sıcacık Menüler</h4>
           <ul style={styles.menuList}>
             {menuler.map((m) => (
               <li key={m} style={styles.menuItem}>{m}</li>
@@ -124,7 +129,7 @@ export default function HomeFooter() {
         </div>
       </div>
 
-      <p style={styles.bottom}>© 2023 Teknolojik Yemekler.</p>
+      <p style={styles.bottom}>© 2026 Teknolojik Yemekler. Tüm hakları saklıdır.</p>
     </footer>
   );
 }
